@@ -1,0 +1,24 @@
+a:not(hover),
+a:not(:focus) {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+.show-on-hover {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5 linear;
+  -webkit-transition: visibility 0s, opacity 0.5 linear;
+  -moz-transition: visibility 0s, opacity 0.5 linear;
+  -ms-transition: visibility 0s, opacity 0.5 linear;
+  -o-transition: visibility 0s, opacity 0.5 linear;
+}
+
+.show-on-hover-container:hover > .show-on-hover {
+  visibility: visible;
+  opacity: 1;
+}
