@@ -72,7 +72,6 @@ export const Mutation = {
 
       return result;
     } catch (err) {
-      console.log("An Error occured: ", err);
       throw new GraphQLYogaError((err as Error).message);
     }
   },
@@ -84,8 +83,7 @@ export const Mutation = {
   ) => {
     try {
       if (!context.user) {
-        console.log("User is undefined");
-        // throw new Error("You must be logged in to create a project");
+        throw new Error("You must be logged in to create a project");
       }
 
       console.log(context.user);
@@ -150,7 +148,6 @@ export const Mutation = {
 
       return stage;
     } catch (err) {
-      console.log("An Error occured: ", err);
       throw new GraphQLYogaError((err as Error).message);
     }
   },
@@ -174,7 +171,6 @@ export const Mutation = {
 
       return task;
     } catch (err) {
-      console.log("An Error occured: ", err);
       throw new GraphQLYogaError((err as Error).message);
     }
   },
@@ -230,7 +226,6 @@ export const Mutation = {
         );
       }
     } catch (err) {
-      console.log("An Error occured: ", err);
       throw new GraphQLYogaError((err as Error).message);
     }
   },

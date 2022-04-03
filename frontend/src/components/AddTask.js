@@ -38,26 +38,26 @@ function AddTask({ stageId }) {
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-group">
-        <label htmlFor="name">Stage Name</label>
+        <label htmlFor="name">Task Name</label>
         <input
           type="text"
           className="form-control"
           id="name"
           name="name"
-          placeholder="Enter Stage Name"
+          placeholder="Enter Task Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
       </div>
       <br />
       <div className="form-group">
-        <label htmlFor="description">Stage Description</label>
+        <label htmlFor="description">Task Description</label>
         <textarea
           className="form-control"
           id="description"
           name="description"
           rows="3"
-          placeholder="Enter Stage Description"
+          placeholder="Enter Task Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />

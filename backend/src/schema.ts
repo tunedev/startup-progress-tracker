@@ -3,7 +3,7 @@ import { Query, Mutation } from "./resolvers";
 
 const typeDefs = /* GraphQL */ `
   type Query {
-    getProjects(userId: Int): [Project!]!
+    getProjects: [Project!]!
     getStages(projectId: Int): [Stage!]!
   }
 

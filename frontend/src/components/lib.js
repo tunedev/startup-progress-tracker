@@ -80,8 +80,8 @@ const Dialog = styled(ReachDialog)({
 const CirleButton = styled.button({
   borderRadius: "30px",
   padding: "0",
-  width: "40px",
-  height: "40px",
+  width: "30px",
+  height: "30px",
   lineHeight: "1",
   display: "flex",
   alignItems: "center",
