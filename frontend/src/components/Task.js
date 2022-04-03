@@ -16,7 +16,6 @@ function TaskUnAuth({ task, stage }) {
           checked={task.done}
           onChange={() => {
             try {
-              console.log({ stageId: stage.id, taskId: task.id });
               setProjects(
                 new Project(
                   handleTaskToggle({

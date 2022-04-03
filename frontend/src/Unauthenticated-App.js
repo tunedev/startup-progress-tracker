@@ -7,7 +7,7 @@ function App() {
   const { notification } = useNotificationCtx();
   return (
     <ProjectProvider>
-      <Container>
+      <Container className="mt-3">
         {notification ? (
           <div
             className="alert alert-danger alert-dismissible fade show"

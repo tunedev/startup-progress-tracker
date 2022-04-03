@@ -22,3 +22,10 @@ a:focus {
   visibility: visible;
   opacity: 1;
 }
+
+@media screen and (max-width: 767px) {
+  .show-on-hover {
+    visibility: visible;
+    opacity: 1;
+  }
+}

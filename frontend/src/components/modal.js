@@ -18,8 +18,16 @@ function Modal(props) {
   return <ModalContext.Provider value={{ isOpen, setIsOpen }} {...props} />;
 }
 
+function useModalCtx() {
+  const context = useContext(ModalContext);
+  if (!context) {
+    throw new Error("useModalCtx must be used within a ModalContext Provider");
+  }
+  return context;
+}
+
 function ModalDismissButton({ children: child }) {
-  const { setIsOpen } = useContext(ModalContext);
+  const { setIsOpen } = useModalCtx();
 
   return cloneElement(child, {
     onClick: callAll(() => setIsOpen(false), child.props.onClick),
@@ -27,7 +35,7 @@ function ModalDismissButton({ children: child }) {
 }
 
 function ModalOpenButton({ children: child }) {
-  const { isOpen, setIsOpen } = useContext(ModalContext);
+  const { isOpen, setIsOpen } = useModalCtx();
 
   return cloneElement(child, {
     onClick: callAll(() => setIsOpen(true), child.props.onClick),
@@ -36,7 +44,7 @@ function ModalOpenButton({ children: child }) {
 }
 
 function ModalContentBase(props) {
-  const { isOpen, setIsOpen } = useContext(ModalContext);
+  const { isOpen, setIsOpen } = useModalCtx();
   return (
     <Dialog isOpen={isOpen} onDismiss={() => setIsOpen(false)} {...props} />
   );
@@ -46,7 +54,7 @@ function ModalContents({ title, children, ...props }) {
   return (
     <ModalContentBase {...props}>
       <div
-        css={{ display: "flex", justifyContent: "flex-end", padding: "10px" }}
+        css={{ display: "flex", justifyContent: "flex-end", padding: "5px" }}
       >
         <ModalDismissButton>
           <CirleButton>
@@ -55,10 +63,16 @@ function ModalContents({ title, children, ...props }) {
           </CirleButton>
         </ModalDismissButton>
       </div>
-      <h3 css={{ textAlign: "center" }}>{title}</h3>
+      <h2 css={{ textAlign: "center", marginBottom: "10px" }}>{title}</h2>
       {children}
     </ModalContentBase>
   );
 }
 
-export { Modal, ModalContents, ModalOpenButton, ModalDismissButton };
+export {
+  Modal,
+  ModalContents,
+  ModalOpenButton,
+  ModalDismissButton,
+  useModalCtx,
+};

@@ -7,7 +7,6 @@ ProjectContext.displayName = "ProjectContext";
 
 function ProjectProvider({ children }) {
   const [projects, setProjects] = useLocalStorage("project-db", project);
-  console.log({ projects });
 
   return (
     <ProjectContext.Provider value={{ projects, setProjects }}>

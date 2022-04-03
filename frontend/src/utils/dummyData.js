@@ -144,12 +144,12 @@ export class Task {
 
 class Stage {
   constructor(stage) {
-    console.log(stage);
     this.id = stage.id;
     this.name = stage.name;
     this.description = stage.description;
     this.projectId = stage.projectId;
-    this.allTaskDone = stage.tasks.every((task) => task.done);
+    this.allTaskDone =
+      stage.tasks.length > 0 && stage.tasks.every((task) => task.done === true);
     this.prevStageId = stage.prevStageId;
     this.tasks = stage.tasks.map((task) => new Task(task));
   }
@@ -157,7 +157,6 @@ class Stage {
 
 export class Project {
   constructor(project) {
-    console.log("projects in constructor begining", project);
     this.id = project.id;
     this.name = project.name;
     this.description = project.description;
@@ -174,12 +173,10 @@ export class Project {
           : null,
       };
     });
-    console.log("projects in constructor end", project);
   }
 
   handleTaskToggle = ({ stageId, taskId }) => {
     const stage = this.stages.find((s) => s.id === stageId);
-    console.log({ stage });
     const task = stage.tasks.find((task) => task.id === taskId);
     let prevStage;
     if (stage.prevStageId) {

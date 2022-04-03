@@ -24,10 +24,10 @@ function StageUnAuth({ stage, index }) {
           <Modal>
             <ModalOpenButton>
               <button
-                className="btn btn-dark show-on-hover mx-3"
+                className="btn btn-dark show-on-hover mx-3 btn-sm"
                 title="Create new Task"
               >
-                <FaPlus /> new task
+                <FaPlus />
               </button>
             </ModalOpenButton>
             <ModalContents title="Create New Task" aria-label="Add New Task">

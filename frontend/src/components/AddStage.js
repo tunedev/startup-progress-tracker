@@ -1,20 +1,25 @@
+import { useState } from "react";
 import { v4 as uuid } from "uuid";
 import { useProjectContext } from "context/project-context";
 import { Project } from "utils/dummyData";
+import { useModalCtx } from "./modal";
+
 function AddStage() {
   const { projects, setProjects } = useProjectContext();
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const { setIsOpen } = useModalCtx();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { name, description } = e.target;
     const newStage = {
       id: uuid(),
-      name: name.value,
-      description: description.value,
+      name,
+      description,
       tasks: [],
       allTaskDone: false,
       prevStageId:
-        projects.stages.length > 1
+        projects.stages.length > 0
           ? projects.stages[projects.stages.length - 1].id
           : null,
     };
@@ -24,8 +29,10 @@ function AddStage() {
         stages: [...projects.stages, newStage],
       })
     );
-    name.value = "";
-    description.value = "";
+    setDescription("");
+    setName("");
+
+    setIsOpen(false);
   };
 
   return (
@@ -38,6 +45,8 @@ function AddStage() {
           id="name"
           name="name"
           placeholder="Enter Stage Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
       </div>
       <br />
@@ -49,6 +58,8 @@ function AddStage() {
           name="description"
           rows="3"
           placeholder="Enter Stage Description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
         />
       </div>
       <br />
