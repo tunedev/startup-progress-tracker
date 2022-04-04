@@ -26,7 +26,6 @@ function TaskUnAuth({ task, stage }) {
                 )
               );
             } catch (err) {
-              console.log(err);
               setNotification({
                 message: err.message,
               });

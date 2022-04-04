@@ -16,9 +16,7 @@ export async function createContext({
   request: Request;
 }): Promise<GraphQLContext> {
   const token = request.headers.get("authorization")?.replace(/Bearer /i, "");
-  console.log(token);
   const user = token ? getUserByToken(token) : null;
-  console.log(user);
   return {
     user,
     prisma,

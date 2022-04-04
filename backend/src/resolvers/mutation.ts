@@ -32,8 +32,6 @@ export const Mutation = {
         username: newUser.username,
       });
 
-      console.log(newUser);
-
       return { ...newUser, password: null, token };
     } catch (err) {
       console.log("An Error occured: ", err);
@@ -85,8 +83,6 @@ export const Mutation = {
       if (!context.user) {
         throw new Error("You must be logged in to create a project");
       }
-
-      console.log(context.user);
 
       const project = await context.prisma.project.create({
         data: {
