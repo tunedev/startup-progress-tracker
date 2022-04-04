@@ -41,6 +41,7 @@ function App() {
             marginTop: "0",
             paddingTop: "15px",
             paddingBottom: "20px",
+            width: "100%",
           },
         }}
       >
