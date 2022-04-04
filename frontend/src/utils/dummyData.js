@@ -1,137 +1,80 @@
-// const stagesDb = [
-//   {
-//     id: 1,
-//     name: "Stage 1",
-//     description: "This is the first stage",
-//     projectId: 1,
-//     prevStageId: null,
-//     tasks: [
-//       {
-//         id: 1,
-//         name: "Task 1",
-//         description: "This is the first task",
-//         done: false,
-//       },
-//       {
-//         id: 2,
-//         name: "Task 2",
-//         description: "This is task 2",
-//         done: false,
-//       },
-//       {
-//         id: 3,
-//         name: "Task 3",
-//         description: "This is task 3",
-//         done: false,
-//       },
-//       {
-//         id: 4,
-//         name: "Task 4",
-//         description: "This is task 4",
-//         done: false,
-//       },
-//     ],
-//   },
-//   {
-//     id: 2,
-//     name: "Stage 2",
-//     description: "This is stage 2",
-//     projectId: 1,
-//     prevStageId: 1,
-//     tasks: [
-//       {
-//         id: 1,
-//         name: "Task 1",
-//         description: "This is the first task",
-//         done: false,
-//       },
-//       {
-//         id: 2,
-//         name: "Task 2",
-//         description: "This is task 2",
-//         done: false,
-//       },
-//       {
-//         id: 3,
-//         name: "Task 3",
-//         description: "This is task 3",
-//         done: false,
-//       },
-//       {
-//         id: 4,
-//         name: "Task 4",
-//         description: "This is task 4",
-//         done: false,
-//       },
-//     ],
-//   },
-//   {
-//     id: 3,
-//     name: "Stage 3",
-//     description: "This is stage 3",
-//     projectId: 1,
-//     prevStageId: 2,
-//     tasks: [
-//       {
-//         id: 1,
-//         name: "Task 1",
-//         description: "This is the first task",
-//         done: false,
-//       },
-//       {
-//         id: 2,
-//         name: "Task 2",
-//         description: "This is task 2",
-//         done: false,
-//       },
-//       {
-//         id: 3,
-//         name: "Task 3",
-//         description: "This is task 3",
-//         done: false,
-//       },
-//       {
-//         id: 4,
-//         name: "Task 4",
-//         description: "This is task 4",
-//         done: false,
-//       },
-//     ],
-//   },
-//   {
-//     id: 4,
-//     name: "Stage 4",
-//     description: "This is stage 4",
-//     projectId: 1,
-//     prevStageId: 3,
-//     tasks: [
-//       {
-//         id: 1,
-//         name: "Task 1",
-//         description: "This is the first task",
-//         done: false,
-//       },
-//       {
-//         id: 2,
-//         name: "Task 2",
-//         description: "This is task 2",
-//         done: false,
-//       },
-//       {
-//         id: 3,
-//         name: "Task 3",
-//         description: "This is task 3",
-//         done: false,
-//       },
-//       {
-//         id: 4,
-//         name: "Task 4",
-//         description: "This is task 4",
-//         done: false,
-//       },
-//     ],
-//   },
-// ];
+const stagesDb = [
+  {
+    id: 1,
+    name: "Foundation",
+    description: "This is the first stage",
+    projectId: 1,
+    prevStageId: null,
+    tasks: [
+      {
+        id: 1,
+        name: "Setup virtual office",
+        description: "This is the first task",
+        done: true,
+      },
+      {
+        id: 2,
+        name: "Set mission & vision",
+        description: "This is task 2",
+        done: true,
+      },
+      {
+        id: 3,
+        name: "Select business name",
+        description: "This is task 3",
+        done: true,
+      },
+      {
+        id: 4,
+        name: "Buy domains",
+        description: "This is task 4",
+        done: true,
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Discovery",
+    description: "This is stage 2",
+    projectId: 1,
+    prevStageId: 1,
+    tasks: [
+      {
+        id: 1,
+        name: "Create roadmap",
+        description: "This is the first task",
+        done: true,
+      },
+      {
+        id: 2,
+        name: "Competitor analysis",
+        description: "This is task 2",
+        done: false,
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Delivery",
+    description: "This is stage 3",
+    projectId: 1,
+    prevStageId: 2,
+    tasks: [
+      {
+        id: 1,
+        name: "Release marketing website",
+        description: "This is the first task",
+        done: false,
+      },
+      {
+        id: 2,
+        name: "Release MVP",
+        description: "This is task 2",
+        done: false,
+      },
+    ],
+  },
+];
 
 export class Task {
   constructor({ id, name, description, done }) {

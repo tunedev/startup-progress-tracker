@@ -29,3 +29,25 @@ a:focus {
     opacity: 1;
   }
 }
+
+.wrapper {
+  background: #949494; /* Old browsers */
+  background: -moz-linear-gradient(
+    45deg,
+    #949494 0%,
+    #9c9c9c 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    45deg,
+    #949494 0%,
+    #9c9c9c 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    45deg,
+    #949494 0%,
+    #9c9c9c 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#949494', endColorstr='#9C9C9C',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
