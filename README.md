@@ -4,7 +4,7 @@
 
 ### Steps to run the app on your local
 
-[Clicke Me to see the front end app](https://magnificent-blancmange-eb1f23.netlify.app/)
+[Click Me to see the front end app](https://magnificent-blancmange-eb1f23.netlify.app/)
 
 - Instructions for getting the backend started is [HERE](https://github.com/tunedev/startup-progress-tracker/tree/main/backend#readme)
 - Instructions for getting the fontend started is [HERE](https://github.com/tunedev/startup-progress-tracker/tree/main/frontend#readme)
