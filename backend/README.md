@@ -26,8 +26,14 @@
 ---
 
 ```graphql
-mutation authenticate {
-  signin(username: "tundev", password: "password") {
+mutation authenticateSignup {
+  signup(username: "test-user", password: "password") {
+    id
+    token
+  }
+}
+mutation authenticateSignin {
+  signin(username: "test-user", password: "password") {
     id
     token
   }
@@ -92,13 +98,6 @@ query getAllStages {
   }
 }
 
-mutation signin {
-  signin(username: "tundev", password: "password") {
-    token
-    id
-  }
-}
-
 mutation createProject {
   createProject(name: "Vekees initial proj", description: "initial project") {
     id
@@ -106,16 +105,6 @@ mutation createProject {
     user {
       id
     }
-  }
-}
-
-mutation creatingStage {
-  createStage(
-    name: "initial stage"
-    description: "intitial Stage"
-    projectId: 2
-  ) {
-    name
   }
 }
 
